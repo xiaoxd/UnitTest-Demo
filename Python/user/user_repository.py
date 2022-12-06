@@ -1,16 +1,19 @@
-import mysql.connector
+import pymysql
 
 
 class UserRepository:
     def __init__(self):
-        self.db = mysql.connector.connect(
+        self.db = pymysql.connector.connect(
             host="localhost",
             user="root",
-            passwd="123456",
-            database="user"
+            password="123456",
+            database="user",
+            port=3306,
+            charset='utf8mb4'
         )
 
     def find_by_name(self, user_name):
+        print(user_name)
         return None
 
     def add_user(self, user):
